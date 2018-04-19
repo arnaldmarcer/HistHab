@@ -2,7 +2,7 @@
 title: "HistHab"
 subtitle: "Historical Habitats"
 author: 
-- Arnald Marcer^[CREAF, Cerdanyola del Vallès 08193, Spain], Carlos Alonso-Blanco^[Departamento de Genética Molecular de Plantas, Centro Nacional de Biotecnología (CNB), Consejo Superior de Investigaciones Científicas (CSIC), Madrid 28049, Spain] and F. Xavier Picó^[Departamento de Ecología Integrativa, Estación Biológica de Doñana (EBD), Consejo Superior de Investigaciones Cientíﬁcas (CSIC), Sevilla 41092, Spain]
+- Arnald Marcer^[CREAF, Cerdanyola del Vallès 08193, Spain] and F. Xavier Picó^[Departamento de Ecología Integrativa, Estación Biológica de Doñana (EBD), Consejo Superior de Investigaciones Cientíﬁcas (CSIC), Sevilla 41092, Spain]
 
 output:
   html_document:
