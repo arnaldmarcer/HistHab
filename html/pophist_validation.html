@@ -1,0 +1,163 @@
+<!-- "http://158.109.46.21:8000/iberiat/ath_hist/app/ath_hist_check.html" -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="pophist_validation.css">
+<link rel="stylesheet" type="text/css" href="jquery.dataTables.min.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="left-left">
+      <table id="validation_sample_table" class="display" style="width:100%">
+        <thead id="validation_sample_table_head">
+        <tr>
+               <th>Region</th>
+               <th>Acronym</th>
+               <th>Year</th>
+               <th>Label</th>
+           </tr>
+       </thead>
+</table>
+  </div>
+    <div id="left">
+      <table id="lc_guide">
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_1" colspan="2">LAND COVER</td>
+        </tr>
+        <!-- #### FOREST #### -->
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_2" colspan="2">FOREST</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_3">as is</td>
+          <td id="table_lc_title_3">w/ infr.</td>
+        </tr>
+        <tr>
+          <td id="vertical_title">sparse</td>
+          <td id="table_lc_image"><img class="lc_type" id="Fs" src="land_cover_images/fs_sparse_forest.jpg" title="Dense forest" /></td>
+          <td id="table_lc_image"><img class="lc_type" id="Fs+" src="land_cover_images/fs+_sparse_forest_with_infrastructure.jpg" title="Dense forest, with infrastructure" /></td>
+        </tr>
+        <tr>
+          <td id="vertical_title">dense</td>
+          <td id="table_lc_image"><img class="lc_type" id="Fd" src="land_cover_images/fd_dense_forest.jpg" title="Dense forest" /></td>
+          <td id="table_lc_image"><img class="lc_type" id="Fd+" src="land_cover_images/fd+_dense_forest_with_infrastructure.jpg" title="Dense forest, with infrastructure" /></td>
+        </tr>
+        <!-- #### DEHESA #### -->
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_2" colspan="2">DEHESA</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_3">as is</td>
+          <td id="table_lc_title_3">w/ infr.</td>
+        </tr>
+        <tr>
+          <td id="vertical_title">&nbsp;</td>
+          <td id="table_lc_image"><img class="lc_type" id="D" src="land_cover_images/d_dehesa.jpg" title="Dehesa" /></td>
+          <td id="table_lc_image"><img class="lc_type" id="D+" src="land_cover_images/d+_dehesa_with_infrastructure.jpg" title="Dehesa, with infrastructure" /></td>
+        </tr>
+        <!-- #### SHRUBS / HERBS #### -->
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_2" colspan="2">SHRUBS / HERBS</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_3">as is</td>
+          <td id="table_lc_title_3">w/ infr.</td>
+        </tr>
+        <tr>
+          <td id="vertical_title">&nbsp;</td>
+          <td id="table_lc_image"><img class="lc_type" id="S" src="land_cover_images/s_shrub_herb.jpg" title="Shrubland / Herbaceous" /></td>
+          <td id="table_lc_image"><img class="lc_type" id="S+" src="land_cover_images/s+_shrub_herb_with_infrastructure.jpg" title="Shrubland / Herbaceous, with infrastructure" /></td>
+        </tr>
+        <!-- #### AGRICULTURE #### -->
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_2" colspan="2">AGRICULTURE</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_3">as is</td>
+          <td id="table_lc_title_3">w/ infr.</td>
+        </tr>
+        <tr>
+          <td id="vertical_title">&nbsp;</td>
+          <td id="table_lc_image"><img class="lc_type" id="A" src="land_cover_images/a_agriculture.jpg" title="Agriculture" /></td>
+          <td id="table_lc_image"><img class="lc_type" id="A+" src="land_cover_images/a+_agriculture_with_infrastructure.jpg" title="Agriculture, with infrastructure" /></td>
+        </tr>
+        <!-- #### BARE LAND #### -->
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_2" colspan="2">BARE LAND</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_3">as is</td>
+          <td id="table_lc_title_3">w/ infr.</td>
+        </tr>
+        <tr>
+          <td id="vertical_title">&nbsp;</td>
+          <td id="table_lc_image"><img class="lc_type" id="B" src="land_cover_images/b_bare.jpg" title="Bare" /></td>
+          <td id="table_lc_image"><img class="lc_type" id="B+" src="land_cover_images/b+_bare_with_infrastructure.jpg" title="Bare, with infrastructure" /></td>
+        </tr>
+        <!-- #### URBAN / INFRASTRUCTURE #### -->
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_2" colspan="2">BUILT LAND</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_3">urban</td>
+          <td id="table_lc_title_3">infrastr.</td>
+        </tr>
+        <tr>
+          <td id="vertical_title">&nbsp;</td>
+          <td id="table_lc_image"><img class="lc_type" id="U" src="land_cover_images/u_urban.jpg" title="Urban" /></td>
+          <td id="table_lc_image"><img class="lc_type" id="I" src="land_cover_images/i_infrastructure.jpg" title="Infrastructure (roads, buildings, ...)" /></td>
+        </tr>
+        <!-- #### WATER #### -->
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_2">WATER</td>
+          <td id="table_lc_title_2">BLANK</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td id="table_lc_title_3">water</td>
+          <td id="table_lc_title_3">blank</td>
+        </tr>
+        <tr>
+          <td id="vertical_title">&nbsp;</td>
+          <td id="table_lc_image"><img class="lc_type" id="W" src="land_cover_images/w_water.jpg" title="Water" /></td>
+          <td id="table_lc_image"><img class="lc_type" id="blank" src="land_cover_images/blank.jpg" title="none" /></td>
+        </tr>
+      </table>
+    </div>
+    <div id="central">
+      <div id="canvas_buttons">
+        <button onclick="sendResults()">Send Results</button>
+      </div>
+      <div id="canvas_div">
+        <canvas id="canvas" width="800" height="800" onclick="canvasClick(event)"></canvas>
+      </div>
+    </div>
+    <div id="right">
+      <div id="metadata_text"></div>
+    </div>
+
+  </div>
+
+</body>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="underscore-min.js"></script>
+<!-- <script type="text/javascript" src="jquery-1.12.4.js"></script> -->
+<script type="text/javascript" src="jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="pophist_validation.js"></script>
+</html>

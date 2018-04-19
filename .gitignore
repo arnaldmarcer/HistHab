@@ -1,0 +1,7 @@
+.*
+!/.gitignore
+env/*
+kilauea-setup/*
+README.html
+todo.html
+
