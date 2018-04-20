@@ -1,18 +1,36 @@
----
-title: "HistHab"
-subtitle: "Historical Habitats"
-author: 
-- Arnald Marcer^[CREAF, Cerdanyola del Vallès 08193, Spain] and F. Xavier Picó^[Departamento de Ecología Integrativa, Estación Biológica de Doñana (EBD), Consejo Superior de Investigaciones Cientíﬁcas (CSIC), Sevilla 41092, Spain]
+# HistHab - Historical Habitats
 
-output:
-  html_document:
-    toc: true
-    toc_float: true
-    number_sections: true
-    toc_depth: 4
----
+* Arnald Marcer  
+ \- *CREAF, Cerdanyola del Vallès 08193, Spain*  
+ \- *Univ. Autòonoma de Barcelona, Cerdanyola del Vallès, Spain*
+ 
+* F. Xavier Picó  
+ \- *Departamento de Ecología Integrativa, Estación Biológica de Doñana (EBD), Consejo Superior de Investigaciones Cientíﬁcas (CSIC), Sevilla 41092, Spain*
+
 <!-- ###################################################################################################### -->
-# Background  
+## Table of contents  
+
+ * [Background](#Background)  
+ * [Historical orthoimages dataset](#historical-orthoimages-dataset)  
+ * [HistHab applications](#histhab-applications)  
+    + [Web portal](#web-portal)  
+    + [Historical land cover](#historical-land-cover)
+    + [Data validation](#data-validation)  
+    + [Data status](#data-status)  
+    + [Historical land cover change](#historical-land-cover-change)  
+    + [Human impact](#human-impact)  
+* [Configuration and server-side](#configuration-and-server-side)      
+    + [Web portal](#web-portal-1)  
+    + [Historical land cover](#historical-land-cover-1)    
+    + [Data validation](#data-validation-1)  
+    + [Data status](#data-status-1)  
+    + [Historical land cover change](#historical-land-cover-change-1)  
+    + [Human impact](#human-impact-1)  
+    + [Server-side backent](#server-side-backend)  
+* [References](#references)      
+
+<!-- ###################################################################################################### -->
+## Background  
 **Preliminary note:** The following applications have been developed with the aim of building a historial database of land cover around wild populations of *Arabidopsis thaliana* in the Iberian peninsula, and what is here explained is tailored to that end. However, the tool can be accomodated to other species and study areas with a small development effort.  
 
 This application is designed to make **historical local maps of land cover around natural populations** of *Arabidopsis thaliana*. These maps are **circular buffers** of a given radius (500 meters) around a **central population coordinate** and are **discretized in square units** of a given size (100 meters) (Figure 1) which can be manually labelled with a given land cover category (Figure 2). The category is assigned according to the criterion of **predominant land cover category** in the square (largest area). Currently, land cover categories are fixed within the application (see below). For each population there are as many orthoimages as years available.  
@@ -22,22 +40,23 @@ This application is designed to make **historical local maps of land cover aroun
 ![Figure 2. Already filled land cover data grid.](docs/figures/filled-sample-grid.jpg)
 
 <!-- ###################################################################################################### -->
-# Historical orthoimages dataset  
+## Historical orthoimages dataset  
 For the *Historical land cover* and *Data validation* applications to be used, historical orthophotographies need to be prepared beforehand. In the case of the Iberian peninsula, these have been obtained through the spatial data infrastructures of the central and regional governments with a python application (please refer to project [https://github.com/arnaldmarcer/ath_hist](https://github.com/arnaldmarcer/ath_hist)).
 
 <!-- ###################################################################################################### -->
 
-# HistHab applications  
+## HistHab applications  
 The following applications are bundled together in a web page and together they allow to handle the photointerpretation and labelling of historical orthoimages.
 
 <!-- ====================================================================================================== -->
-## Web portal  
+
+### Web portal  
 This is a simple web page with a menu option, *Open application*, from which the rest of the applications can be accessed.
 
 ![Figure 3. Web portal page. Applications are accessible in the menu 'Open application'.](docs/figures/web-portal.jpg)
 
 <!-- ====================================================================================================== -->
-## Historical land cover
+### Historical land cover
 This is the main application (see Figure 4) which allows to label historical land cover categories (see Figure 1 and 2) for each orthoimage prepared (see [Historical orthoimages dataset] section above). Land cover categories have been preestablished and thougth in the context of natural environments in the Iberian peninsula. In order to use other categories some code tweaking would be necessary. As of this version the land cover categories are shown in the table below. Categories with a `+` sign mean that within the labelled square there is the presence of some sort of human element, *e.g.* road, building, etc.    
 
 | Land Cover      | Label    |
@@ -91,7 +110,7 @@ Metadata for the image is shown right to it.
 * **see on Google Maps** link: Opens a new window with the population shown in Google Maps.  
 
 <!-- ====================================================================================================== -->
-## Data validation   
+### Data validation   
 This is a complementary application to the *Historical land cover* data entry application (see above). Its purpose is to validate the data entered by a given photointerpreter. The application needs to be given a random list of squares among all populations and years in order to do the validation. A different photointerpreter than the one who performed the data entry process independently assigns land cover categories to the this selected random list of squares. If there is a high agreement between different photointerpreters which have labelled data independently then one can conclude that assigned land cover categories are robust. 
 
 ![Figure 5. Graphical user interface for the data validation application.](docs/figures/data-validation-app.jpg)
@@ -108,21 +127,21 @@ The metadata on the right are the same as in the **data entry application** abov
 Data are stored in a *json* file (see Configuration and setup section below).
 
 <!-- ====================================================================================================== -->
-## Data status  
+### Data status  
 
 ![Figure 6. Data status applicaiton main window](docs/figures/hlc-data-status.jpg)
 
 This a helping application for the person photointerpreter of the historical land cover. It shows a table with the status of each population data. A number is given for each population and year which represents the number of labelled squares. In this implementation, each population/year has 80 squares to be labelled and when this is complete is shown in green and when it is not, in red.  
 
 <!-- ====================================================================================================== -->
-## Historical land cover change  
+### Historical land cover change  
 
 ![Figure 7. Land cover change per population](docs/figures/lc-change-app.jpg)
 
 This is an application to make a simple representation of the data entered in the *data entry* application (see above). It outputs stacked bar plots which show the relative percentages of land cover per population and year. This application can also help the photointerpreter and validator to check for rare patterns in the data which may be further checked for errors in the interpretation process.  
 
 <!-- ====================================================================================================== -->
-## Human impact  
+### Human impact  
 
 ![Figure 8. Degree of artificialization](docs/figures/artificialization-degree-app.jpg)
 
@@ -134,9 +153,10 @@ In order to calculate the index a weight value is given to each land cover categ
 (see above for labels description)  
 
 <!-- ###################################################################################################### -->
-# Configuration and server-side
+## Configuration and server-side
 <!-- ====================================================================================================== -->
-## Web portal
+
+### Web portal
 
 This application is composed of the following files located in the *html/* folder of this repository:  
 
@@ -197,7 +217,7 @@ File containing the users and passwords. Format:
     }
 
 <!-- ====================================================================================================== -->    
-## Historical land cover
+### Historical land cover
 
 **Orthoimages folder structure**  
 
@@ -279,7 +299,7 @@ This application is composed of the following files located in the *html/* direc
     + **underscore-min.js**: Underscore Javascript library  
 
 <!-- ====================================================================================================== -->    
-## Data validation  
+### Data validation  
 
 The application uses the same orthoimages from the same folder structure as the **Historical land cover** application above. The only extra data needed is the validation dataset, which is explained below. This is a dataset stored as a *json* file named as *\<user_check\>\_accuracy\_assessment\_sample.json* in the same folder as the results of the **Historical land cover** application (see above). *\<user_check\>* is the name of the user doing the validation. This allows for doing different validations by different persons. Validation data entered with this application are stored in this same *json* file.  
 **Validation *json* file**  
@@ -364,23 +384,23 @@ This application is composed of the following files located in the *html* direct
     + **jquery.dataTables.min.js**: DataTables Javascript library  
 
 <!-- ====================================================================================================== -->    
-## Data status  
+### Data status  
 This application reads the entered data stored in *json* files of the *Historical land cover* application (see above). This is a shiny application. Please refer to the server-side section below.   
 
 <!-- ====================================================================================================== -->    
-## Land cover change
+### Land cover change
 This application reads the entered data stored in *json* files of the *Historical land cover* application (see above). This is a shiny application. Please refer to the server-side section below.   
 
 <!-- ====================================================================================================== -->    
-## Human impact  
+### Human impact  
 This application reads the entered data stored in *json* files of the *Historical land cover* application (see above). This is a shiny application. Please refer to the server-side section below.   
 
 <!-- ====================================================================================================== -->    
-## Server-side backend
+### Server-side backend
 
 The *Web portal*, *Historical land cover* and *Data validation* (both html/js/css) interact a python server backend.  
 
-### Python server  
+#### Python server  
 File *ws.py* in the directory *server* of this repository is the server backend file.  
 
 **Configuration file**  
@@ -417,11 +437,11 @@ The application keeps a list of all started sessions in the file *env/sessions.l
 **Python version**  
 The **ws.py** script is in Python 2.7.13 and the requirements for building a python virtual environment are in file **server/requirements.txt**.  
 
-### Shiny applications  
+#### Shiny applications  
 
 The *Data status*, *Land cover change* and *Human impact* are shiny applications, they need to be deployed on a shiny server and their corresponding URL set in the *apps.json* file mentioned above.  
 
-# References
+## References
 
 * Congalton, Russell G. and Green, Kass (2008). Assessing the accuracy of remotely sensed data: principles and practices, 2nd edition. CRC Press, Taylor & Francis Group, Boca Raton, Florida, USA.
 
