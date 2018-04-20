@@ -1,4 +1,5 @@
 source("../scripts/pophist.R")
+
 ui <- fluidPage(
     fluidRow(
         titlePanel("Land cover change"),
@@ -27,9 +28,9 @@ ui <- fluidPage(
 )
 
 server <- function(input, output) {
-
    output$cover_change <- renderPlot({
        p <- plotCoverChange(input$region)
+
        p
    })
 }
