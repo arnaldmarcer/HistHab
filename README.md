@@ -38,6 +38,7 @@ This application is designed to make **historical local maps of land cover aroun
 <img src='docs/figures/sample-grid.jpg'/>  
 Figure 1. Land cover data grid over 2013 orthoimage for population *El Brull* . Grid squares are included if their central point is inside the circular buffer (in red).  
 
+
 <img src='docs/figures/filled-sample-grid.jpg'/>    
 Figure 2. Already filled land cover data grid.
 
@@ -59,6 +60,7 @@ This is a simple web page with a menu option, *Open application*, from which the
 <img src='docs/figures/web-portal.jpg'/>    
 Figure 3. Web portal page. Applications are accessible in the menu 'Open application'.  
 
+
 <!-- ====================================================================================================== -->
 ### Historical land cover
 This is the main application (see Figure 4) which allows to label historical land cover categories (see Figure 1 and 2) for each orthoimage prepared (see [Historical orthoimages dataset] section above). Land cover categories have been preestablished and thougth in the context of natural environments in the Iberian peninsula. In order to use other categories some code tweaking would be necessary. As of this version the land cover categories are shown in the table below. Categories with a `+` sign mean that within the labelled square there is the presence of some sort of human element, *e.g.* road, building, etc.    
@@ -79,6 +81,7 @@ As noted above, categories are assigned to each square in the grid according to 
 
 <img src='docs/figures/data-entry-app.jpg'/>    
 Figure 4. Graphical user interface for the data entry application.
+
 
 **USAGE**  
 
@@ -121,6 +124,7 @@ This is a complementary application to the *Historical land cover* data entry ap
 <img src='docs/figures/data-validation-app.jpg'/>    
 Figure 5. Graphical user interface for the data validation application.
 
+
 **USAGE**  
 The table on the left contains the random squares validation dataset (see below).  
 
@@ -138,6 +142,7 @@ Data are stored in a *json* file (see Configuration and setup section below).
 <img src='docs/figures/hlc-data-status.jpg'/>    
 Figure 6. Data status applicaiton main window
 
+
 This a helping application for the person photointerpreter of the historical land cover. It shows a table with the status of each population data. A number is given for each population and year which represents the number of labelled squares. In this implementation, each population/year has 80 squares to be labelled and when this is complete is shown in green and when it is not, in red.  
 
 <!-- ====================================================================================================== -->
@@ -146,6 +151,7 @@ This a helping application for the person photointerpreter of the historical lan
 <img src='docs/figures/lc-change-app.jpg'/>    
 Figure 7. Land cover change per population.  
 
+
 This is an application to make a simple representation of the data entered in the *data entry* application (see above). It outputs stacked bar plots which show the relative percentages of land cover per population and year. This application can also help the photointerpreter and validator to check for rare patterns in the data which may be further checked for errors in the interpretation process.  
 
 <!-- ====================================================================================================== -->
@@ -153,6 +159,7 @@ This is an application to make a simple representation of the data entered in th
 
 <img src='docs/figures/artificialization-degree-app.jpg'/>   
 Figure 8. Degree of artificialization
+
 
 This application calculates a simple index of artificialization and plots a line graph per population. It uses the data entered in the *data entry* application (see above). It outputs line graphs of the calculated articialization index against year for each population. This application can also help the photointerpreter and validator to check for rare patterns in the data which may be further checked for errors in the interpretation process.  
 
@@ -234,6 +241,7 @@ Orthoimages are stored in directory defined in the **config.json** file describe
 
 <img src='docs/figures/orthoimages-folder-structure.jpg' width='200'/>   
 Figure 9. Orthoimages folder structure.  
+
 
 **Orthoimages files and naming convention**  
 Each orthoimage is represented by a *jpg* file and a *json* file, with the following naming pattern:  
