@@ -35,9 +35,12 @@
 
 This application is designed to make **historical local maps of land cover around natural populations** of *Arabidopsis thaliana*. These maps are **circular buffers** of a given radius (500 meters) around a **central population coordinate** and are **discretized in square units** of a given size (100 meters) (Figure 1) which can be manually labelled with a given land cover category (Figure 2). The category is assigned according to the criterion of **predominant land cover category** in the square (largest area). Currently, land cover categories are fixed within the application (see below). For each population there are as many orthoimages as years available.  
 
-![Figure 1. Land cover data grid over 2013 orthoimage for population *El Brull* . Grid squares are included if their central point is inside the circular buffer (in red).](docs/figures/sample-grid.jpg)
+<img src='docs/figures/sample-grid.jpg'/>  
+Figure 1. Land cover data grid over 2013 orthoimage for population *El Brull* . Grid squares are included if their central point is inside the circular buffer (in red).  
 
-![Figure 2. Already filled land cover data grid.](docs/figures/filled-sample-grid.jpg)
+<img src='docs/figures/filled-sample-grid.jpg'/>    
+Figure 2. Already filled land cover data grid.
+
 
 <!-- ###################################################################################################### -->
 ## Historical orthoimages dataset  
@@ -53,7 +56,8 @@ The following applications are bundled together in a web page and together they 
 ### Web portal  
 This is a simple web page with a menu option, *Open application*, from which the rest of the applications can be accessed.
 
-![Figure 3. Web portal page. Applications are accessible in the menu 'Open application'.](docs/figures/web-portal.jpg)
+<img src='docs/figures/web-portal.jpg'/>    
+Figure 3. Web portal page. Applications are accessible in the menu 'Open application'.  
 
 <!-- ====================================================================================================== -->
 ### Historical land cover
@@ -73,7 +77,8 @@ This is the main application (see Figure 4) which allows to label historical lan
 
 As noted above, categories are assigned to each square in the grid according to a predominance criterion, *i.e.* the square is labelled with the land cover category with the largest area within it.  
 
-![Figure 4. Graphical user interface for the data entry application.](docs/figures/data-entry-app.jpg)
+<img src='docs/figures/data-entry-app.jpg'/>    
+Figure 4. Graphical user interface for the data entry application.
 
 **USAGE**  
 
@@ -113,7 +118,8 @@ Metadata for the image is shown right to it.
 ### Data validation   
 This is a complementary application to the *Historical land cover* data entry application (see above). Its purpose is to validate the data entered by a given photointerpreter. The application needs to be given a random list of squares among all populations and years in order to do the validation. A different photointerpreter than the one who performed the data entry process independently assigns land cover categories to the this selected random list of squares. If there is a high agreement between different photointerpreters which have labelled data independently then one can conclude that assigned land cover categories are robust. 
 
-![Figure 5. Graphical user interface for the data validation application.](docs/figures/data-validation-app.jpg)
+<img src='docs/figures/data-validation-app.jpg'/>    
+Figure 5. Graphical user interface for the data validation application.
 
 **USAGE**  
 The table on the left contains the random squares validation dataset (see below).  
@@ -129,21 +135,24 @@ Data are stored in a *json* file (see Configuration and setup section below).
 <!-- ====================================================================================================== -->
 ### Data status  
 
-![Figure 6. Data status applicaiton main window](docs/figures/hlc-data-status.jpg)
+<img src='docs/figures/hlc-data-status.jpg'/>    
+Figure 6. Data status applicaiton main window
 
 This a helping application for the person photointerpreter of the historical land cover. It shows a table with the status of each population data. A number is given for each population and year which represents the number of labelled squares. In this implementation, each population/year has 80 squares to be labelled and when this is complete is shown in green and when it is not, in red.  
 
 <!-- ====================================================================================================== -->
 ### Historical land cover change  
 
-![Figure 7. Land cover change per population](docs/figures/lc-change-app.jpg)
+<img src='docs/figures/lc-change-app.jpg'/>    
+Figure 7. Land cover change per population.  
 
 This is an application to make a simple representation of the data entered in the *data entry* application (see above). It outputs stacked bar plots which show the relative percentages of land cover per population and year. This application can also help the photointerpreter and validator to check for rare patterns in the data which may be further checked for errors in the interpretation process.  
 
 <!-- ====================================================================================================== -->
 ### Human impact  
 
-![Figure 8. Degree of artificialization](docs/figures/artificialization-degree-app.jpg)
+<img src='docs/figures/artificialization-degree-app.jpg'/>   
+Figure 8. Degree of artificialization
 
 This application calculates a simple index of artificialization and plots a line graph per population. It uses the data entered in the *data entry* application (see above). It outputs line graphs of the calculated articialization index against year for each population. This application can also help the photointerpreter and validator to check for rare patterns in the data which may be further checked for errors in the interpretation process.  
 
@@ -223,7 +232,8 @@ File containing the users and passwords. Format:
 
 Orthoimages are stored in directory defined in the **config.json** file described above. This directory is accessible to the server application and within directories corresponding to the region in the Iberian peninsula where their corresponding population is located as in Figure 9 below. 
 
-![Figure 9. Orthoimages folder structure.](docs/figures/orthoimages-folder-structure.jpg){width=200px}
+<img src='docs/figures/orthoimages-folder-structure.jpg' width='200'/>   
+Figure 9. Orthoimages folder structure.  
 
 **Orthoimages files and naming convention**  
 Each orthoimage is represented by a *jpg* file and a *json* file, with the following naming pattern:  
@@ -240,8 +250,9 @@ The *json* file is automatically generated when downloading the orthoimage (see 
 
 Entered data are stored in *json* files in a folder structure equal to the orthoimages folder structure but in a different root directory (as defined in the **config.json** file described above) as in Figure 10 below. A *json* for each population is saved and named after the population code or acronym. Data for all years are stored in this file. Squares' ids are numbered from 1 to n for all years altogether.   
 
-<img src='docs/figures/results-folder-structure.jpg' width='200'/>
+<img src='docs/figures/results-folder-structure.jpg' width='200'/>  
 Figure 10. Results folder structure.  
+
 
 **Example of a results *json* file**  
 This file would be named after the acronym of the population, that is *ani.json*.  
