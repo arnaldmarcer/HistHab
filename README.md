@@ -240,8 +240,8 @@ The *json* file is automatically generated when downloading the orthoimage (see 
 
 Entered data are stored in *json* files in a folder structure equal to the orthoimages folder structure but in a different root directory (as defined in the **config.json** file described above) as in Figure 10 below. A *json* for each population is saved and named after the population code or acronym. Data for all years are stored in this file. Squares' ids are numbered from 1 to n for all years altogether.   
 
-![Figure 10. Results folder structure.]
-(<img src='docs/figures/results-folder-structure.jpg' width='200'/>)
+<img src='docs/figures/results-folder-structure.jpg' width='200'/>
+Figure 10. Results folder structure.  
 
 **Example of a results *json* file**  
 This file would be named after the acronym of the population, that is *ani.json*.  
